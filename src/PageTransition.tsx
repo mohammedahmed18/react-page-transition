@@ -26,11 +26,7 @@ function PageTransition({
       if (typeof enterAnimationOverride === 'string') {
         return animations[enterAnimationOverride];
       }
-      return {
-        ...animations[enterAnimationOverride.name],
-        delay: enterAnimationOverride.delay,
-        onTop: enterAnimationOverride.onTop
-      };
+      return enterAnimationOverride;
     }
     if (preset) {
       return {
@@ -47,11 +43,7 @@ function PageTransition({
       if (typeof exitAnimationOverride === 'string') {
         return animations[exitAnimationOverride];
       }
-      return {
-        ...animations[exitAnimationOverride.name],
-        delay: exitAnimationOverride.delay,
-        onTop: exitAnimationOverride.onTop
-      };
+      return exitAnimationOverride;
     }
     if (preset) {
       return {
